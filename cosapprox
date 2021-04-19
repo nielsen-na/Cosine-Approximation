@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int dn=0;
+double cosValue = 0;
+double l;
+int fact (int n) {
+    if (n>1)
+        return n * fact(n - 1);
+    else
+            return 1;
+}
+double cos (double x, int n){
+    return (pow(x,n))/(fact(n));
+}
+
+int main() {
+    cout << "What is the angle in Radians?\n";
+    cin >> l;
+for (int runCount=1;runCount<6;runCount++){
+    dn=dn+2;
+    if(runCount%2==0)
+cosValue+=cos(l,(dn));
+    else
+    cosValue-=cos(l,(dn));
+}
+    cout << 1 + cosValue;
+}
